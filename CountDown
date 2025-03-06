@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown to Colleague's Return</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #countdown {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #time {
+            font-size: 3em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown">
+        <h1>Countdown until [Colleague's Name] is back!</h1>
+        <div id="time"></div>
+    </div>
+
+    <script>
+        const returnDate = new Date("2025-04-01T08:00:00").getTime();
+        const countdownElement = document.getElementById("time");
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = returnDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = "[Colleague's Name] is back!";
+            }
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
