@@ -28,12 +28,12 @@
 </head>
 <body>
     <div id="countdown">
-        <h1>Countdown until [Colleague's Name] is back!</h1>
+        <h1>Countdown until [Elling Nakken] is back!</h1>
         <div id="time"></div>
     </div>
 
     <script>
-        const returnDate = new Date("2025-04-01T08:00:00").getTime();
+        const returnDate = new Date("2025-03-17T09:00:00").getTime();
         const countdownElement = document.getElementById("time");
 
         function updateCountdown() {
