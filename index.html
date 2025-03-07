@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Nedtelling til Nakkens tilbakekomst</title></title>
+    <title>Elling Nakkens Tilbakekomst</title>
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -15,22 +16,29 @@
         }
         #countdown {
             text-align: center;
+            margin-bottom: 20px;
         }
         h1 {
             font-size: 2em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         #time {
             font-size: 3em;
             color: #333;
         }
+        img {
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
     <div id="countdown">
-        <h1>Nedtelling til Elling Nakken ee tilbake!</h1>
+        <h1>Nedtelling til Elling Nakken er tilbake!</h1>
         <div id="time"></div>
     </div>
+    <img src="Elling.png" alt="Elling" />
 
     <script>
         const returnDate = new Date("2025-03-17T09:00:00").getTime();
@@ -49,7 +57,7 @@
 
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                countdownElement.innerHTML = "[Colleague's Name] is back!";
+                countdownElement.innerHTML = "Elling is back!";
             }
         }
 
